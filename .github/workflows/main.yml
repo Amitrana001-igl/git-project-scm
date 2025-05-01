@@ -1,9 +1,13 @@
-name: Hello wolrd
+name: Hello World
+
 on:
-push:
+  push:
+    branches:
+      - main  # You can specify the branch to trigger the workflow, here it triggers on push to the 'main' branch.
+
 jobs:
-say-hello:
-runs-on:
-steps:
-name: Print Hello
-run: echo "Hello world!  ~@"
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello
+        run: echo "Hello world! ~@"
